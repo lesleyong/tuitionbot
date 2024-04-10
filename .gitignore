@@ -31,3 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+.cdk.staging
+cdk.out
