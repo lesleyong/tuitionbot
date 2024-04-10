@@ -15,6 +15,8 @@
 	<description>Telegram Tuition Bot</description>
 	<properties>
 		<java.version>17</java.version>
+		<cdk.version>2.136.0</cdk.version>
+		<constructs.version>[10.0.0,11.0.0)</constructs.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -59,6 +61,17 @@
 			<version>2.3.0</version>
 		</dependency>
 
+		<!-- AWS Cloud Development Kit -->
+		<dependency>
+			<groupId>software.amazon.awscdk</groupId>
+			<artifactId>aws-cdk-lib</artifactId>
+			<version>${cdk.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>software.constructs</groupId>
+			<artifactId>constructs</artifactId>
+			<version>${constructs.version}</version>
+		</dependency>
 
 	</dependencies>
 
@@ -75,6 +88,15 @@
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>3.1.0</version>
+				<configuration>
+					<mainClass>com.tele.tuitionbot.TuitionBotApplication</mainClass>
 				</configuration>
 			</plugin>
 		</plugins>
